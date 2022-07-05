@@ -13,7 +13,8 @@ char *read_cmd(char *buf)
     char *tmp;
 
     buf = get_next_line(0);
-    b_len = ft_strlen(tmp);
+    b_len = ft_strlen(buf);
+    /*
     while (b_len > 1 && buf[b_len - 1] == '\\')
     {
         buf[b_len - 1] = '\n';
@@ -24,6 +25,10 @@ char *read_cmd(char *buf)
         buf = ft_strjoin(tmp, buf);
         b_len = ft_strlen(buf);
     }
+    */
+    buf[b_len - 1] = '\n';
+    buf[b_len] = '\0';
+    print_prompt2();
     return (buf);
 
 }

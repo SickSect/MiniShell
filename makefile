@@ -3,7 +3,8 @@ NAME		=	minishell
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
 HEADER		=	minishell.h
-SRC			=	main.c utils/get_next_line.c utils/get_next_line_utils.c \
+SRC			=	main.c src.c \
+				utils/get_next_line.c utils/get_next_line_utils.c \
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
 				utils/strlen.c utils/strdup.c utils/strjoin.c
 
