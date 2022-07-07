@@ -5,6 +5,8 @@
 # define ERR_CH			( 0)
 # define INIT_SRC_POS	(-2)
 
+#include "errno.h"
+
 typedef struct s_src
 {
     char	*buf; // actualy buffer
