@@ -51,7 +51,8 @@ void	skip_wsp(t_src *src)
 {
 	char	ch;
 
-	if (!src || !src->buf)
+	if (!src || !src->buf) // check for NODATA
 		return ;
-	while (((ch = )))
+	while (((ch = peek_ch(src)) != EOF) && (ch == ' ' || ch == '\t')) // check sym if it EOF or \r or ' '
+		next_ch(src);
 }
