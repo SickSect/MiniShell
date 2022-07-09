@@ -11,6 +11,13 @@ typedef struct s_token
     char	*text;
 }	t_token;
 
+typedef struct s_need_to_be_global
+{
+	char	*t_buf;
+    int		tb_size;
+	int		tb_index;
+}	t_global;
+
 extern t_token eof_t;
 t_token	*tokenize(t_src *src);
 void	t_free(t_token *t);

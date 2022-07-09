@@ -13,15 +13,6 @@
 # include <errno.h>
 # include <signal.h>
 
-typedef struct s_need_to_be_global
-{
-	char	*token_buffer;
-	int		token_b_size;
-	int		token_b_index;
-	t_src	*p_src;
-	t_token	*p_roken;
-}	t_global;
-
 void	ft_putchar_fd(char c, int fd);
 int		ft_isdigit(int ch);
 char	*ft_strnew(size_t size);
@@ -37,5 +28,7 @@ void    print_prompt1(void);
 void    print_prompt2(void);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_astrjoin(char *s1, char *s2);
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
+char    ft_realloc(char *str, int size);
 
 #endif
