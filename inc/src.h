@@ -4,6 +4,7 @@
 # define EOF			(-1)
 # define ERR_CH			( 0)
 # define INIT_SRC_POS	(-2)
+# define ERR_CPY        (-3)
 
 #include "errno.h"
 

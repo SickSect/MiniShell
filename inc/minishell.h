@@ -30,5 +30,6 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_astrjoin(char *s1, char *s2);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 char    ft_realloc(char *str, int size);
+size_t	ft_strcpy(char *dest, const char *src);
 
 #endif

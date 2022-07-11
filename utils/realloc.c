@@ -9,4 +9,7 @@ char *ft_realloc(char *str, int size)
     i = 0;
     while(str[i++])
         new_ptr[i] = str[i];
+    while (i < size)
+        new_ptr[i++] = '\0';
+    return (new_ptr);
 }

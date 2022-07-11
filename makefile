@@ -4,10 +4,10 @@ CC			=	clang
 FLAGS		=   -O0 -g -I inc/
 HEADER		=	minishell.h
 SRC			=	main.c src.c \
-				utils/get_next_line.c utils/get_next_line_utils.c \
+				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
-				utils/strlen.c utils/strdup.c utils/strjoin.c \
-				spec_utils/parse_char.c
+				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
+				spec_utils/parse_char.c spec_utils/tokenizer.c spec_utils/tokenise.c 
 
 OBJ			=	$(SRC:.c=.o)
 

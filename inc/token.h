@@ -16,6 +16,7 @@ typedef struct s_need_to_be_global
 	char	*t_buf;
     int		tb_size;
 	int		tb_index;
+    t_token *t;
 }	t_global;
 
 extern t_token eof_t;
