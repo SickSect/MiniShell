@@ -1,5 +1,4 @@
 #include "minishell.h"
-#include "src.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
@@ -26,8 +25,8 @@ size_t	ft_strcpy(char *dest, const char *src)
 
 	i = 0;
 	if (!src)
-		return (ERR_CPY);
-	while (str[i])
+		return (-1);
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
