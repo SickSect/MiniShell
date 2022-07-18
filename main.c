@@ -1,23 +1,17 @@
 #include "minishell.h"
 
-char *reader(char *cmd)
+char *reader(char *buf)
 {
-	int b_len;
+    int b_len;
     char *tmp;
 
-    cmd = get_next_line(0);
-    b_len = ft_strlen(cmd);
-    while (b_len > 1 && cmd[b_len - 1] == '\\')
-    {
-        cmd[b_len - 1] = '\n';
-        cmd[b_len] = '\0';
-        print_prompt2();
-        tmp = cmd;
-        cmd = get_next_line(0);
-        cmd = ft_strjoin(tmp, cmd);
-        b_len = ft_strlen(cmd);
-    }
-    return (cmd);
+    buf = get_next_line(0);
+    b_len = ft_strlen(buf);
+    buf[b_len - 1] = '\n';
+    buf[b_len] = '\0';
+    print_prompt2();
+    return (buf);
+
 }
 
 int main(int argc, char **argv, char **env)
