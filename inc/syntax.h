@@ -12,9 +12,9 @@ typedef struct	s_source
 	long		current_pos;
 }				t_source;
 
-char			next_char(struct source_s *src);
-void			unget_char(struct source_s *src);
-char			peek_char(struct source_s *src);
-void			skip_white_spaces(struct source_s *src);
+char			next_char(t_source *src);
+void			unget_char(t_source  *src);
+char			peek_char(t_source *src);
+void			skip_white_spaces(t_source  *src);
 
 #endif
