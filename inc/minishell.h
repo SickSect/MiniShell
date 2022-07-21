@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
 
 void	ft_putchar_fd(char c, int fd);
 int		ft_isdigit(int ch);
@@ -24,4 +26,5 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_astrjoin(char *s1, char *s2);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strcpy(char *dest, const char *src);
+char	*ft_strcat(char *str_a, char *str_b);
 #endif
