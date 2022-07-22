@@ -8,8 +8,6 @@ char	*ft_strcat(char *str_a, char *str_b)
 
 	i = 0;
 	j = 0;
-	tmp_a = str_a;
-	tmp_b = str_b;
 	while (str_a[i] != '\0')
 		i++;
 	while(str_b[j] != '\0')
