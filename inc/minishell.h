@@ -12,7 +12,7 @@
 void	ft_putchar_fd(char c, int fd);
 int		ft_isdigit(int ch);
 char	*ft_strnew(size_t size);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c); //gnl
 char	*ft_cut(char *str);
 char	*ft_liner(char *str);
 char	*get_next_line(int fd);
