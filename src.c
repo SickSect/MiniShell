@@ -2,7 +2,7 @@
 #include "source.h"
 
 
-char    *PeekChar(t_source *source)
+char    PeekChar(t_source *source)
 {
     long    position;
 
@@ -20,7 +20,7 @@ char    *PeekChar(t_source *source)
     return (source->buffer[position]);
 }
 
-char    *NextChar(t_source *source)
+char    NextChar(t_source *source)
 {
     char    *tmp;
 

@@ -1,4 +1,6 @@
 #include "minishell.h"
+#include "source.h"
+#include "scanner.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -18,10 +20,10 @@ char *ReadCmd(char *buf)
 
 int	main(int argc, char **argv, char **env)
 {
-    int flg = 0;
-    char *cmd;
+    char		*cmd;
+    t_source	source;
 
-    while (flg == 0)
+    while (1)
     {
         DisplayPrompt1();
         cmd = ReadCmd(cmd);
@@ -37,8 +39,10 @@ int	main(int argc, char **argv, char **env)
             free(cmd);
             break ;
         }
-        write(1, cmd, ft_strlen(cmd));
-        write(1, "\n", 1);
+		source.buffer = cmd;
+		source.bufferSize = ft_strlen(cmd);
+		source.currentPos = InitSrcPos;
+		printf("LEN %ld CMD: %s\n", source.bufferSize, source.buffer);
         free(cmd);
     }
     exit (EXIT_SUCCESS);
