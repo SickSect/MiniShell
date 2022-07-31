@@ -2,12 +2,10 @@
 #include "source.h"
 #include "scanner.h"
 
-static int TokenErrorCheck(t_source *source)
-{
-    
-}
-
 t_token *Tokenise(t_source *source)
 {
-    
+    if (!source || !source->buffer || !source->bufferSize)
+    {
+        errno = ENODATA;
+    }
 }
