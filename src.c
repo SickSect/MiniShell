@@ -1,24 +1,60 @@
-#include <errno.h>
 #include "minishell.h"
-#include "src.h"
+#include "source.h"
 
-char	next_char(t_src *src)
+
+char    *PeekChar(t_source *source)
 {
-    char ch_1;
+    long    position;
 
-    if (!src || !src->buf)
+    if (!source || !source->buffer)
     {
         errno = ENODATA;
-        return (ERR_CH);
+        return (ErrorChar);
     }
-    ch_1 = 0;
-    if (src->c_pos == INIT_SRC_POS)
-        src->c_pos = -1;
-    else
-        ch_1 = src->c_pos;
-    if (++src->c_pos > src->b_size)
+    position = source->currentPos;
+    if (position == InitSrcPos)
+        position++;
+    position++;
+    if (position >= source->bufferSize)
+        return (EndOfFile);
+    return (source->buffer[position]);
+}
+
+char    *NextChar(t_source *source)
+{
+    char    *tmp;
+
+    if (!source || !source->buffer)
     {
-        src->c_pos = src->b_size;
-        return (EOF);
+        errno = ENODATA;
+        return (ErrorChar);
     }
+    tmp = 0;
+    if (source->currentPos == InitSrcPos)
+        source->currentPos = -1;
+    else
+        tmp = source->buffer[source->currentPos];
+    if (++source->currentPos >= source->bufferSize)
+    {
+        source->currentPos = source->bufferSize;
+        return (EndOfFile);
+    }
+    return (source->buffer[source->currentPos]);
+}
+
+void    UngetChar(t_source *source)
+{
+    if (source->currentPos < 0)
+        return;
+    source->currentPos--;    
+}
+
+void    SkipWhiteSpace(t_source *source)
+{
+    char    tmp;
+
+    if (!source || !source->buffer)
+        return ;
+    while (((tmp = PeekChar(source)) != EndOfFile) && (tmp = ' ' || tmp == '\t'))
+        NextChar(source);
 }

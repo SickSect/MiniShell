@@ -1,5 +1,6 @@
 #include "minishell.h"
 
+/*
 char *ft_realloc(char *str, int size)
 {
     char    *new_ptr;
@@ -13,3 +14,4 @@ char *ft_realloc(char *str, int size)
         new_ptr[i++] = '\0';
     return (new_ptr);
 }
+*/

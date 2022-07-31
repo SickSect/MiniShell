@@ -9,12 +9,12 @@ static int	ft_cmp(char a, char b)
 	return (0);
 }
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strcmp(const char *str1, const char *str2)
 {
 	size_t	i;
 
 	i = 0;
-	while (str1[i] && str2[i] && i < n)
+	while (str1[i] && str2[i])
 	{
 		if (ft_cmp(str1[i], str2[i]) != 0)
 		{
@@ -22,7 +22,5 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 		}
 		i++;
 	}
-	if (i < n)
-		return (ft_cmp(str1[i], str2[i]));
 	return (0);
 }
