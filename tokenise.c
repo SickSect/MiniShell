@@ -106,4 +106,6 @@ t_token *Tokenise(t_source *source)
 		cmdText->tokenIndex--;
 	cmdText->text[cmdText->tokenIndex] = '\0';
 	token = CreateToken(cmdText->text);
+    token->source = source;
+    return (token);
 }

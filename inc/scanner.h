@@ -1,9 +1,3 @@
-#ifndef SCANNER_H
-# define SCANNER_H
-
-#include "minishell.h"
-#include "source.h"
-
 typedef struct s_token
 {
     t_source    *source;
@@ -21,5 +15,3 @@ typedef struct s_global
 
 t_token     *Tokenize(t_source *source);
 void        FreeToken(t_token *token);
-
-#endif
