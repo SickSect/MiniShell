@@ -7,5 +7,6 @@
 char	*SearchPath(char *file);
 int		DoExecCommand(int argc, char **argv);
 int		DoSimpleCommand(struct node_s *node);
+void    FileNotFoundInPath(char *p, char *p2);
 
 #endif

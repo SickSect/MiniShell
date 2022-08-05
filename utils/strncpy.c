@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-char	*ft_strcpy(char *dest, const char *src, int n)
+char	*ft_strncpy(char *dest, const char *src, int n)
 {
 	size_t	i;
 

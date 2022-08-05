@@ -9,6 +9,7 @@
 # include <fcntl.h>
 # include <dirent.h>
 # include <sys/wait.h>
+# include <sys/stat.h>
 # include <limits.h>
 # include <errno.h>
 # include <signal.h>
@@ -32,6 +33,7 @@ char	*ft_astrjoin(char *s1, char *s2);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 char    ft_realloc(char *str, int size);
 size_t	ft_strcpy(char *dest, const char *src);
-char	*ft_strcpy(char *dest, const char *src, int n);
+char	*ft_strncpy(char *dest, const char *src, int n);
+char	ft_strcat(char *dest, char *src);
 
 #endif

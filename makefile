@@ -2,7 +2,7 @@ NAME		=	minishell
 
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
-HEADER		=	minishell.h scanner.h source.h
+HEADER		=	minishell.h scanner.h source.h executor.c executor_more.c
 SRC			=	main.c free_toke.h src.c\
 				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
