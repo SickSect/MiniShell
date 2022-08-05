@@ -2,8 +2,8 @@ NAME		=	minishell
 
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
-HEADER		=	minishell.h scanner.h source.h executor.c executor_more.c
-SRC			=	main.c free_toke.h src.c\
+HEADER		=	minishell.h scanner.h source.h parser_node.h executor.h 
+SRC			=	main.c free_toke.c node.c parser.c tokenise.c src.c executor.c executor_more.c exec_command.c\
 				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
 				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
