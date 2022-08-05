@@ -3,6 +3,8 @@
 
 #include "minishell.h"
 #include "source.h"
+#include "scanner.h"
+#include "source.h"
 
 enum node_type_e
 {
@@ -48,5 +50,9 @@ typedef struct node_s
 						*/
 } t_node;
 
-struct node_s *ParseSimpleCmd(t_token *token);
+struct	node_s *ParseSimpleCmd(t_token *token);
+void	AddChildNode(t_node *parent, t_node *child);
+void	FreeNodeTree(t_node *node);
+void	SetNodeValStr(t_node *node, char *val);
+
 #endif
