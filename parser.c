@@ -2,6 +2,15 @@
 #include "parser.h"
 #include "test.h"
 
+static void trim_newline(char *str)
+{
+	int	i;
+
+	i = ft_strlen(str) - 1;
+	if (str[i] == '\n')
+		str[i] = '\0';
+}
+
 static char *parse_per_token(char *str)
 {
 	char	*spaced_str;
@@ -26,7 +35,6 @@ static char *parse_per_token(char *str)
 		}
 		spaced_str[j++] = str[i++];
 	}
-	printf("|%s|\n", spaced_str);
 	return (spaced_str);
 }
 
@@ -39,6 +47,9 @@ t_source *parse_str(char *str)
 	if (!src)
 		return (NULL);
 	src->command = str;
+	src->str_len = ft_strlen(str);
 	src->spaced_str = parse_per_token(str);
+	trim_newline(src->spaced_str);
+	printf("|%s|\n", src->spaced_str);
 	return (src);
 }
