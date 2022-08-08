@@ -25,7 +25,6 @@ char *read_cmd(char *buf)
         buf = ft_strjoin(tmp, buf);
         b_len = ft_strlen(buf);
     }
-    printf("B LEN %d\n", b_len);
     return (buf);
 
 }

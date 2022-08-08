@@ -26,7 +26,7 @@ static char *parse_per_token(char *str)
 		}
 		spaced_str[j++] = str[i++];
 	}
-	//printf("|%s|\n", spaced_str);
+	printf("|%s|\n", spaced_str);
 	return (spaced_str);
 }
 
@@ -38,8 +38,7 @@ t_source *parse_str(char *str)
 	src = malloc(sizeof(t_source));
 	if (!src)
 		return (NULL);
-	src->cmd = str;
-	src->cmd = parse_per_token(str);
-	src->buf_str = parse_per_token(str);
+	src->command = str;
+	src->spaced_str = parse_per_token(str);
 	return (src);
 }
