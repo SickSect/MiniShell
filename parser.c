@@ -50,6 +50,5 @@ t_source *parse_str(char *str)
 	src->str_len = ft_strlen(str);
 	src->spaced_str = parse_per_token(str);
 	trim_newline(src->spaced_str);
-	printf("|%s|\n", src->spaced_str);
 	return (src);
 }
