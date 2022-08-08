@@ -8,10 +8,7 @@ void print_str(char **str)
 
     while (str[i] != NULL)
     {
-        if (str[i] == "\n")
-            printf("|NEW_LINE|");
-        else
-            printf(" %d = |%s| ", i, str[i]);
+        printf(" ARG%d: |%s| ", i, str[i]);
         i++;
     }
 }
