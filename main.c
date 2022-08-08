@@ -40,7 +40,7 @@ int	main(int argc, char **argv, char **env)
         }
         //printf(" YOU ENTERED %s\n", cmd);
         source = parse_str(cmd);
-        check_argv(source);
+        //check_argv(source);
 		//printf("LEN %ld CMD: %s\n", source.bufferSize, source.buffer);
         free(cmd);
     }

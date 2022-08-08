@@ -7,7 +7,7 @@ SRC			=	main.c parser.c\
 				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
 				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
-				utils/strlcpy.c utils/split.c \
+				utils/token_oper.c utils/strlcpy.c utils/split.c \
 				test/check_argv.c
 OBJ			=	$(SRC:.c=.o)
 

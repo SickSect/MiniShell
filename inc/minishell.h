@@ -36,5 +36,5 @@ size_t	ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, int n);
 char	ft_strcat(char *dest, char *src);
 char	**ft_split(char const *s, char c);
-
+int     get_len_with_spaces(char *str);
 #endif

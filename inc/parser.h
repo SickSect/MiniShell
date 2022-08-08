@@ -5,7 +5,8 @@ typedef struct s_source
 {
     size_t	str_len;
     char	*buf_str;
-	char	**substr_arg;
+	char	*cmd;
+    char    **arg;
 }t_source;
 
 t_source	*parse_str(char *str);
