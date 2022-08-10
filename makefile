@@ -2,9 +2,9 @@ NAME		=	minishell
 
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
-HEADER		=	minishell.h parser.h executor.h test.h
-SRC			=	main.c parser.c search.c executor.c\
-				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
+HEADER		=	minishell.h parser.h test.h
+SRC			=	main.c parser.c search.c\
+				utils/get_next_line.c utils/get_next_line_utils.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
 				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
 				utils/token_oper.c utils/strlcpy.c utils/split.c utils/strncpy.c utils/strcat.c \
@@ -16,7 +16,7 @@ RM		=	rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CC) $(FLAGS) -o $(NAME) $^
+			@$(CC) $(FLAGS) -o $(NAME) $^
 
 %.o:	%.c
 			@$(CC) $(FLAGS) -o $@ -c $<
