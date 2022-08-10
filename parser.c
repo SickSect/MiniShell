@@ -6,9 +6,13 @@ static void trim_newline(char *str)
 {
 	int	i;
 
-	i = ft_strlen(str) - 1;
-	if (str[i] == '\n')
-		str[i] = '\0';
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			str[i] = '\0';
+		i++;
+	}
 }
 
 static char *parse_per_token(char *str)

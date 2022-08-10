@@ -6,12 +6,12 @@ char	*ft_strncpy(char *dest, const char *src, int n)
 
 	i = 0;
 	if (!src)
-		return (-1);
+		return (NULL);
 	while (src[i] && i < n)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (dest);
 }
