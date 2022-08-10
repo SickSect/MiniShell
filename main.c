@@ -52,14 +52,15 @@ int	main(int argc, char **argv, char **env)
         }
         // это редактируем полученную строку
         source = parse_str(cmd);
-        printf("STATUS OK\n");
         // сплитую для удобства проверки, проверяю как работает поиск путя к команде
         source->splitted_str = ft_split(source->spaced_str, ' ');
         printf("full str is |%s|\n|%s| send to func\n", source->spaced_str, source->splitted_str[0]);
         // собственно вызываю функцию и тут будет лежать путь к команде
         source->command_path = search_path(source->splitted_str[0]);
-        printf("STATUS OK\n");
         printf("path to command %s is : %s\n", source->splitted_str[0], source->command_path);
+        //Преобразовать уже преобразованные данные еще и в двусвязный список с типа и перечеслдениями 
+
+        // вызвать функцию по выполнению команды
         free(cmd);
     }
     return 0;
