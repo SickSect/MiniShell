@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-char	ft_strcat(char *dest, char *src)
+void	ft_strcat(char *dest, char *src)
 {
 	size_t	i;
 

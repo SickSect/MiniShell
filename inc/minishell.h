@@ -34,7 +34,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 char    ft_realloc(char *str, int size);
 size_t	ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, int n);
-char	ft_strcat(char *dest, char *src);
+void	ft_strcat(char *dest, char *src);
 char	**ft_split(char const *s, char c);
 int     get_len_with_spaces(char *str);
 #endif

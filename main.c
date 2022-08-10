@@ -51,13 +51,13 @@ int	main(int argc, char **argv, char **env)
             break ;
         }
         source = parse_str(cmd);
-        printf("OK\n");
+        printf("STATUS OK\n");
         source->splitted_str = ft_split(source->spaced_str, ' ');
         printf("full str is |%s|\n|%s| send to func\n", source->spaced_str, source->splitted_str[0]);
         source->command_path = search_path(source->splitted_str[0]);
-        printf("OK\n");
+        printf("STATUS OK\n");
         printf("path to command %s is : %s\n", source->splitted_str[0], source->command_path);
         free(cmd);
     }
-    exit (EXIT_SUCCESS);
+    return 0;
 }
