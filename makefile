@@ -3,7 +3,7 @@ NAME		=	minishell
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
 HEADER		=	minishell.h parser.h test.h token.h
-SRC			=	main.c parser.c search.c tokenize.c\
+SRC			=	main.c parser.c search.c executor.c node.c\
 				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
 				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c utils/printing.c\
 				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
