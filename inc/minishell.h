@@ -37,4 +37,6 @@ char	*ft_strncpy(char *dest, const char *src, int n);
 void	ft_strcat(char *dest, char *src);
 char	**ft_split(char const *s, char c);
 int     get_len_with_spaces(char *str);
+void    print_in_fd(int fd, char *str);
+void    print_str_with_char(char *str, char ch, int fd);
 #endif

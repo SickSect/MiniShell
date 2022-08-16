@@ -3,11 +3,9 @@
 
 typedef struct s_source
 {
-    size_t	str_len;
-    char	*spaced_str;
+    long    str_len;
+    long    current_position;
 	char	*command;
-    char    **splitted_str;
-    char    *command_path;
 }t_source;
 
 t_source	*parse_str(char *str);

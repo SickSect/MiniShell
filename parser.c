@@ -2,6 +2,7 @@
 #include "parser.h"
 #include "test.h"
 
+/*
 static void trim_newline(char *str)
 {
 	int	i;
@@ -56,3 +57,4 @@ t_source *parse_str(char *str)
 	trim_newline(src->spaced_str);
 	return (src);
 }
+*/

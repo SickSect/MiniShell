@@ -1,7 +1,12 @@
 #include "minishell.h"
 #include "parser.h"
-
+#include "token.h"
 #include "test.h"
+
+int parse_n_execute(t_source *src, char *env)
+{
+
+}
 
 char *read_cmd(char *buf)
 {
@@ -46,8 +51,9 @@ int	main(int argc, char **argv, char **env)
             break ;
         }
         source = parse_str(cmd);
-        source->splitted_str = ft_split(source->spaced_str, ' ');
-        source->command_path = search_path(source->splitted_str[0]);
+        source->command = cmd;
+        source->str_len = ft_strlen(cmd);
+        source->current_position = Init_position;
         free(cmd);
     }
     return 0;
