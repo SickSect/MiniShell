@@ -50,27 +50,22 @@ char    get_next_char(t_source *src)
     return (src->command[src->current_position]);
 }
 
-void add_char(char *scan_str, char ch, int *current_index, int *current_size)
+void add_char(char ch, t_token *tok)
 {
-    char *new_scan_str;
+    char *tmp;
 
-    scan_str[*current_index++] = ch;
-    if (*current_index >= *current_size)
+    if (!tok->text)
     {
-        new_scan_str = malloc(sizeof(char) * (*current_size * 2));
-        if (!new_scan_str)
+        tok->text = malloc(sizeof(char) * (2));
+        tok->text[1] = '\0';
+        tok->text[0] = ch;
+        tok->current_size = 2;
+    }
+    else
+    {
+        if (tok->current_size >= tok->text_len)
         {
-            errno = ENOMEM;
-            return ;
+            tmp = malloc(sizeof(char) * (ft_strlen(tok->text) + 2));
         }
-        while (*scan_str)
-        {
-            *new_scan_str = *scan_str;
-            scan_str++;
-            new_scan_str++;
-        }
-        free(scan_str);
-        scan_str = new_scan_str;
-        *current_size *= 2;
     }
 }

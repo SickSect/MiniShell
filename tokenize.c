@@ -12,64 +12,39 @@ static int  token_validation(t_source *src)
     return 1;
 }
 
-static int	quote_checker(char ch)
+static int tokenize_cycle(t_token *tok, t_source *src, t_scan_str *scan, int endloop)
 {
-	if (ch == '"' || ch == '\'' || ch == '`')
-		return (1);
-	else
-		return (0);
-}
-
-static int	quote_case()
-{
-
-}
-
-static int tokenize_cycle(char *scan_str, t_source *src, t_token *tok, int *current_size)
-{
-	int		endloop;
-	int		i;
-	char	next_char;
-	char	current_char;
-	int		current_index;
-
-	current_index = 0;
-	endloop = 0;
-	while (current_char = get_next_char(src) != End_of_file)
+	while (scan->current_char != End_of_file)
 	{
-		if (quote_checker(current_char) == 1)
+		if (scan->current_char == '"' || scan->current_char == '\'' || scan->current_char == '`')
 		{
-			add_char(scan_str, current_char, &current_index, current_size);
-			i = find_closing_quote(src->command);
+			add_char()
 		}
-		if (!i)
-		{
-			print_str_with_char("error missing closing quote", current_char, stderr);
-			src->current_position = src->str_len;
-			return (NULL);
-		}
-		while (i--)
-			add_char(get_next_char(src));
+		scan->current_char = get_next_char(src);
 	}
 }
 
 t_token *tokenize(t_source *src)
 {
-	//change on struct t_scan_str!!!!!!
-    char	*scan_str;
-	t_token	*tok;
-	int		current_size;
+	t_token		*tok;
+	t_scan_str	*scan;
+	int	endloop;
 
+	endloop = 0;
 	if (!token_validation(src))
 		return (NULL);
-	scan_str = NULL;
-	scan_str = malloc(sizeof(char) * (1024));
-	if (!scan_str)
+	scan->current_size = 1024;
+	scan->current_index = 0;
+	scan->scan_str = malloc(sizeof(char) * (scan->current_size));
+	if (!scan->scan_str)
 	{
-		errno = ENOMEM;
-		return (NULL);
+		errno = ENODATA;
+		return NULL;
 	}
-	scan_str[0] = '\0';
-	current_size = 1024;
-	tokenize_cycle(scan_str, src, tok, &current_size);
+	scan->scan_str[0] = '\0';
+	scan->current_char = get_next_char(src);
+	if (scan->current_char == Error_char || scan->current_char == End_of_file)
+		return (NULL);
+	tok->text_len = src->str_len;
+	tokenize_cycle(tok, src, scan, endloop);
 }
