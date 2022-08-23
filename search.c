@@ -34,13 +34,10 @@ char	*search_cycle(char *file, char *a_path, char *b_path, char *env_paths)
 		b_path = a_path;
 		while (*b_path && *b_path != ':')
 			b_path++;
-		printf("1 TRY PATH IS |%s|\tA_PATH %c\tB_PATH %c\n", try_path, *a_path, *b_path);
 		try_path = get_path_till_colon(file, a_path, b_path);
-		printf("2 TRY PATH IS |%s|\tA_PATH %c\tB_PATH %c\n", try_path, *a_path, *b_path);
 		if (try_path[-1] != '/')
 			ft_strcat(try_path, "/");
 		ft_strcat(try_path, file);
-		printf("3 TRY PATH IS |%s|\tA_PATH %c\tB_PATH %c\n", try_path, *a_path, *b_path);
 		if (stat(try_path, &st) == 0)
 		{
 			if (!S_ISREG(st.st_mode))
@@ -63,8 +60,6 @@ char	*search_cycle(char *file, char *a_path, char *b_path, char *env_paths)
 			if (*b_path == ':')
 				a_path++;
 		}
-		printf("4 TRY PATH IS |%s|\tA_PATH %c\tB_PATH %c\n", try_path, *a_path, *b_path);
-		sleep(2);
 	}
 	errno = ENOENT;
 	return (NULL);
