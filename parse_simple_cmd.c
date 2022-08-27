@@ -6,7 +6,7 @@
 /*   By: wbeck <wbeck@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:00:26 by wbeck             #+#    #+#             */
-/*   Updated: 2022/08/21 16:00:35 by wbeck            ###   ########.fr       */
+/*   Updated: 2022/08/27 16:41:40 by wbeck            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ struct node_s	*parse_simple_cmd(s_token *token)
 	t_node		*cmd;
 	t_node		*word;
 	t_source	*src;
-
+ 
 	if (!token)
 		return (NULL);
 	if (init_utils(token, cmd))
