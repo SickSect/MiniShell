@@ -1,7 +1,18 @@
 #include "minishell.h"
 #include "parser.h"
-
+#include "token.h"
 #include "test.h"
+
+
+int parse_n_execute(t_source *src, char **env)
+{
+    t_token *tok;
+    tok = malloc(sizeof(t_token));
+    tok = tokenize(src);
+    printf("%s\n%d\n", tok->text, tok->text_len);
+    sleep(1);
+    return (0);
+}
 
 char *read_cmd(char *buf)
 {
@@ -45,9 +56,11 @@ int	main(int argc, char **argv, char **env)
             free(cmd);
             break ;
         }
-        source = parse_str(cmd);
-        source->splitted_str = ft_split(source->spaced_str, ' ');
-        source->command_path = search_path(source->splitted_str[0]);
+        source = malloc(sizeof(t_source));
+        source->command = cmd;
+        source->str_len = ft_strlen(cmd);
+        source->current_position = Init_position;
+        parse_n_execute(source, env);
         free(cmd);
     }
     return 0;

@@ -2,12 +2,12 @@ NAME		=	minishell
 
 CC			=	clang
 FLAGS		=   -O0 -g -I inc/
-HEADER		=	minishell.h parser.h executor.h test.h
-SRC			=	main.c parser.c search.c executor.c\
+HEADER		=	minishell.h parser.h test.h token.h
+SRC			=	main.c parser.c search.c char_operation.c tokenize_cases.c tokenize.c\
 				utils/get_next_line.c utils/get_next_line_utils.c utils/memset.c\
-				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c \
+				utils/atoi.c utils/strcmp.c utils/isdigit.c utils/prompt.c utils/printing.c\
 				utils/strlen.c utils/strdup.c utils/strjoin.c utils/realloc.c \
-				utils/token_oper.c utils/strlcpy.c utils/split.c utils/strncpy.c utils/strcat.c \
+				utils/token_oper.c utils/isalnum.c utils/strlcpy.c utils/split.c utils/strncpy.c utils/strcat.c \
 				test/check_argv.c
 OBJ			=	$(SRC:.c=.o)
 

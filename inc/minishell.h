@@ -25,6 +25,7 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(const char *str);
 int		ft_newline(const char *str);
+int     ft_isalnum(int ch);
 int		ft_atoi(const char *str);
 void    display_prompt1(void);
 void    display_prompt2(void);
@@ -37,4 +38,6 @@ char	*ft_strncpy(char *dest, const char *src, int n);
 void	ft_strcat(char *dest, char *src);
 char	**ft_split(char const *s, char c);
 int     get_len_with_spaces(char *str);
+void    print_in_fd(int fd, char *str);
+void    print_str_with_char(char *str, char ch, int fd);
 #endif
