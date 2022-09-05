@@ -23,10 +23,10 @@ void	initsh_utils(int len, t_symtab_entry *entry, char **p2, char *eq)
 
 	strncpy(name, *p2, len);
 	name[len] = '\0';
-	// entry = add_to_symtab(name);
+	entry = add_to_symtab(name);
 	if (entry)
 	{
-		// symtab_entry_setval(entry, eq + 1);
+		symtab_entry_setval(entry, eq + 1);
 		entry->flags |= FLAG_EXPORT;
 	}
 }
@@ -37,7 +37,7 @@ void	initsh_utils(int len, t_symtab_entry *entry, char **p2, char *eq)
 
 void	init_sh(char **env)
 {
-	t_symtab_entry	*entry; // что это??
+	t_symtab_entry	*entry;
 	char			**temp_env;
 	char			*eq; // переназвать нужно, а то непонятно
 	int				len;
@@ -50,14 +50,14 @@ void	init_sh(char **env)
 		if (eq)
 		{
 			len = ft_strlen(eq) - ft_strlen(*temp_env);
-			// init_sh_utils(len, entry, temp_env, eq);
+			init_sh_utils(len, entry, temp_env, eq);
 		}
 		else
-			// entry = add_to_symtab(*temp_env);
+			entry = add_to_symtab(*temp_env);
 		temp_env++;
 	}
-	// entry = add_to_symtab("PS1");
-	// symtab_entry_setval(entry, "$ ");
-	// entry = add_to_symtab("PS2");
-	// symtab_entry_setval(entry, "> ");
+	entry = add_to_symtab("PS1");
+	symtab_entry_setval(entry, "$ ");
+	entry = add_to_symtab("PS2");
+	symtab_entry_setval(entry, "> ");
 }
