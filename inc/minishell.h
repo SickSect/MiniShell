@@ -27,4 +27,8 @@ typedef struct s_mini
 	int					shlvl;
 }	t_mini;
 
+t_list	*do_split(char	*str);
+void	make_split(t_list	**list);
+char	*insert_inside_gap2(t_inside_gap_2	change, char *content);
+
 #endif
