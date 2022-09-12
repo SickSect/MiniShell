@@ -9,14 +9,14 @@ t_list	*do_split(char *str)
 
 	i = 0;
 	list = NULL;
-	strs = split(str, '|'); //ft_split
+	strs = ft_split(str, '|');
 	while (strs[i])
 	{
 		new = ft_lstnew(strs[i]);
 		ft_lstadd_back(&list, new);
 		i++;
 	}
-	free_mem(strs);
+	free_mem(strs); // ее нет 
 	return (list);
 }
 
@@ -27,7 +27,7 @@ void	make_split(t_list **list)
 	tmp = *list;
 	while (tmp)
 	{
-		tmp->cmd = split(tmp->content, ' '); // ft_split
+		tmp->cmd = ft_split(tmp->content, ' ');
 		tmp = tmp->next;
 	}
 }

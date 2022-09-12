@@ -7,7 +7,7 @@ t_list	*ft_lstnew(char	*content)
 	elem = (t_list *) malloc(sizeof(t_list));
 	if (elem)
 	{
-		elem->content = strdup(content); // ft_strdup
+		elem->content = ft_strdup(content); 
 		elem->cmd = NULL;
 		elem->next = NULL;
 	}
