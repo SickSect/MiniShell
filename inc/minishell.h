@@ -8,12 +8,24 @@
 # include <fcntl.h>
 # include <dirent.h>
 # include <sys/types.h>
+
 # include <errno.h>
 # include <sys/ioctl.h>
 # include <signal.h>
 # include <termios.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 # include "parser.h"
 # include "pipe.h"
+# include "lib_utils.h"
+
+typedef struct s_sig
+{
+	pid_t	pid;
+	int		ex_code;
+}				t_sig;
+
+t_sig	g_sig;
 
 typedef struct s_mini
 {
