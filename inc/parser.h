@@ -26,12 +26,15 @@ typedef struct s_pre
 
 typedef struct s_inside_gap2
 {
-	char	red_in;
-	char	red_out;
-	char	pipe;
-	char	point_coma;
-	char	tilda;
-	char	gap;
+	char	in_redirect; // (<)
+	char	out_redirect; // (>)
+	char	pipe; // (|)
+	char	cmd_separator; // бывшая point_coma (;)
+	char	tilda; // (~)
+	char	gap; // (\')  про эту херь не очень понятно
 }				t_inside_gap_2;
+
+// тут про эти символы, и более правильные названия, я их оттуда и взяла 
+// https://www.howtogeek.com/439199/15-special-characters-you-need-to-know-for-bash/ 
 
 #endif

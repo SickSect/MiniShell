@@ -7,7 +7,9 @@ SRC			=	main.c \
 				lib_utils/atoi.c lib_utils/get_next_line.c lib_utils/get_next_line_utils.c \
 				lib_utils/isalnum.c lib_utils/isdigit.c lib_utils/putchar.c lib_utils/split.c \
 				lib_utils/strcat.c lib_utils/strcmp.c lib_utils/strjoin.c lib_utils/strdup.c \
-				lib_utils/ strlcpy.c lib_utils/strlen.c lib_utils/strncpy.c   
+				lib_utils/ strlcpy.c lib_utils/strlen.c lib_utils/strncpy.c  lib_utils/ft_lstadd_back.c \
+				lib_utils/ft_lstlast.c lib_utils/ft_lstnew.c
+
 OBJ			=	$(SRC:.c=.o)
 
 RM		=	rm -rf
